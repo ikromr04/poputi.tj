@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="{{ asset('favicons/180x180.png') }}">
   <link rel="manifest" href="{{ asset('manifest.webmanifest') }}">
 
-  <title></title>
+  <title>Поездки на ваш выбор по самым низким ценам | {{ env('APP_NAME') }}</title>
 </head>
 
 <body>

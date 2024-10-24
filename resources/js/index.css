@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#root {
+  @apply flex flex-col min-w-full min-h-screen bg-blue-50;
+}
+
+.container {
+  @apply w-[90vw] max-w-7xl mx-auto;
+}
