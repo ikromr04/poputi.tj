@@ -13,7 +13,7 @@ export default function Navigation(): JSX.Element {
   return (
     <nav className="flex items-center justify-end grow gap-x-3 lg:gap-x-0">
       <div className="absolute top-0 left-0 -z-10 w-full h-full bg-white border-b"></div>
-      <ul className="hidden sm:flex mr-auto text-blue-500 font-semibold">
+      <ul className="hidden sm:flex mr-auto text-blue-600 font-semibold">
         <li>
           <Link
             className={classNames(
@@ -38,12 +38,12 @@ export default function Navigation(): JSX.Element {
         </li>
       </ul>
 
-      <ul className="flex items-center gap-x-3 text-blue-500 font-semibold lg:gap-x-0">
+      <ul className="flex items-center gap-x-3 text-blue-600 font-semibold lg:gap-x-0">
         <li>
           <Link
             className={classNames(
-              'flex items-center gap-x-2 lg:px-3 lg:py-1 transition-colors duration-300 hover:text-blue-800 group',
-              pathname.startsWith(AppRoute.Search.Trip) && 'text-blue-800 active',
+              'flex items-center gap-x-2 lg:px-3 lg:py-1 transition-colors duration-300 hover:text-blue-800',
+              pathname.startsWith(AppRoute.Search.Trip) && 'text-blue-800',
             )}
             to={AppRoute.Search.Trip}
           >
@@ -54,8 +54,8 @@ export default function Navigation(): JSX.Element {
         <li>
           <Link
             className={classNames(
-              'flex items-center gap-x-2 lg:px-3 lg:py-1 transition-colors duration-300 hover:text-blue-800 group',
-              pathname.startsWith(AppRoute.Publish.Trip) && 'text-blue-800 active',
+              'flex items-center gap-x-2 lg:px-3 lg:py-1 transition-colors duration-300 hover:text-blue-800',
+              pathname.startsWith(AppRoute.Publish.Trip) && 'text-blue-800',
             )}
             to={AppRoute.Publish.Trip}
           >
@@ -68,31 +68,24 @@ export default function Navigation(): JSX.Element {
       <div ref={ref} className="relative flex">
         <button
           className={classNames(
-            'relative lg:p-2 group',
-            (pathname.startsWith(AppRoute.Auth.Index) || isOpen) && 'active',
+            'relative lg:p-2 text-blue-600 hover:text-blue-800 transition-colors duration-300',
+            (pathname.startsWith(AppRoute.Auth.Index) || isOpen) && 'text-blue-800',
           )}
           type="button"
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="sr-only">Профиль</span>
           <Icons.profile className="w-7 h-7" width={32} height={32} />
-          <Icons.caretDown
-            className={classNames(
-              'absolute bottom-[2px] lg:bottom-[10px] left-1/2 transform -translate-x-1/2 transition-all duration-300 text-white',
-              isOpen && '-scale-y-[1]'
-            )}
-            width={10}
-          />
         </button>
 
         <ul className={classNames(
-          'absolute top-[calc(100%+13px)] lg:top-[calc(100%+15px)] right-[-5vw] lg:right-0 flex flex-col bg-white text-blue-500 font-semibold p-2 gap-1 shadow-sm border -z-20 rounded-bl-md lg:rounded-md min-w-max w-72 transform transition-all duration-300',
+          'absolute top-[calc(100%+13px)] lg:top-[calc(100%+15px)] right-[-5vw] lg:right-0 flex flex-col bg-white text-blue-600 font-semibold p-2 gap-1 shadow-sm border -z-20 rounded-bl-md lg:rounded-md min-w-max w-72 transform transition-all duration-300',
           isOpen ? 'translate-y-0 visible' : '-translate-y-[110%] invisible'
         )}>
           <li>
             <Link
               className={classNames(
-                'flex rounded py-1 p-2 transition-colors hover:bg-blue-50',
+                'flex rounded py-2 px-3 transition-colors hover:bg-blue-50 duration-300',
                 pathname.startsWith(AppRoute.Auth.Login) && 'bg-blue-50'
               )}
               to={AppRoute.Auth.Login}
@@ -104,7 +97,7 @@ export default function Navigation(): JSX.Element {
           <li>
             <Link
               className={classNames(
-                'flex rounded py-1 p-2 transition-colors hover:bg-blue-50',
+                'flex rounded py-2 px-3 transition-colors hover:bg-blue-50 duration-300',
                 pathname.startsWith(AppRoute.Auth.Register) && 'bg-blue-50'
               )}
               to={AppRoute.Auth.Register}
