@@ -12,7 +12,13 @@ export default function App(): JSX.Element {
     <BrowserRouter>
       <Routes>
         <Route path={AppRoute.Index} element={<MainPage />} />
+        <Route path={AppRoute.Trips.Index} element={<LoginPage />} />
+        <Route path={AppRoute.Help.Index} element={<LoginPage />} />
+        <Route path={AppRoute.Search.Trip} element={<LoginPage />} />
+        <Route path={AppRoute.Publish.Trip} element={<LoginPage />} />
+
         <Route path={AppRoute.Auth.Login} element={<LoginPage />} />
+        <Route path={AppRoute.Auth.Register} element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );
