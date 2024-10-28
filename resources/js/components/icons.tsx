@@ -24,4 +24,9 @@ export const Icons = {
       <path fill="currentColor" d="m400 .625-199.925 284.75L0 .625h400Z" />
     </svg>
   ),
+  circle: (props: SVGProps<SVGSVGElement>): JSX.Element => (
+    <svg viewBox="0 0 20 20" fill="none" {...props}>
+      <path fill="currentColor" fillRule="evenodd" d="M10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10Z" clipRule="evenodd" />
+    </svg>
+  ),
 };
