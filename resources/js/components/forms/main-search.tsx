@@ -108,7 +108,7 @@ export default function MainSearch({
               <label className="relative flex items-center">
                 <span className="sr-only">Дата поездки</span>
                 <>
-                  <Icons.calendar className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400" width={18} height={18} />
+                  <Icons.calendar className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400" width={20} height={20} />
                   <DatePicker
                     selected={startDate}
                     locale={ru}
@@ -133,7 +133,7 @@ export default function MainSearch({
             <div>
               <label className="relative flex items-center">
                 <span className="sr-only">Пассажиры</span>
-                <Icons.passenger className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400" width={24} height={24} />
+                <Icons.passenger className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400" width={20} height={21} />
                 <Field
                   className="flex w-full pl-10 focus:outline-none min-h-14 rounded-xl focus:bg-gray-200 font-semibold text-blue-900"
                   name="passengers"
