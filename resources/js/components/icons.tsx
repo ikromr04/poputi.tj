@@ -29,4 +29,27 @@ export const Icons = {
       <path fill="currentColor" fillRule="evenodd" d="M10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10Z" clipRule="evenodd" />
     </svg>
   ),
+  calendar: (props: SVGProps<SVGSVGElement>): JSX.Element => (
+    <svg viewBox="0 0 18 18" fill="none" {...props}>
+      <path fill="currentColor" fillRule="evenodd" d="M0 4a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4Zm4-2.5h10A2.5 2.5 0 0 1 16.5 4v.75h-15V4A2.5 2.5 0 0 1 4 1.5Zm12.5 4.75V14a2.5 2.5 0 0 1-2.5 2.5H4A2.5 2.5 0 0 1 1.5 14V6.25h15Z" clipRule="evenodd" />
+      <path fill="currentColor" d="M5.5 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm0 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM10 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm4.5 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM10 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" />
+    </svg>
+  ),
+  passenger: (props: SVGProps<SVGSVGElement>): JSX.Element => (
+    <svg viewBox="0 0 24 24" {...props}>
+      <path fill="currentColor" fillRule="evenodd" d="M4.5 19v.5h15V19c0-.597-.354-1.421-1.545-2.166C16.76 16.089 14.81 15.5 12 15.5s-4.76.588-5.955 1.334C4.854 17.58 4.5 18.405 4.5 19M3 19v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1c0-2.5-3-5-9-5s-9 2.5-9 5m9-6.5A4.5 4.5 0 0 0 16.5 8V7a4.5 4.5 0 1 0-9 0v1a4.5 4.5 0 0 0 4.5 4.5M15 8V7a3 3 0 1 0-6 0v1a3 3 0 1 0 6 0" clipRule="evenodd" color="currentColor" />
+    </svg>
+  ),
+  increment: (props: SVGProps<SVGSVGElement>): JSX.Element => (
+    <svg viewBox="0 0 20 20" fill="none" {...props}>
+      <path fill="currentColor" fillRule="evenodd" d="M10 18.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Zm0 1.5c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10Z" clipRule="evenodd" />
+      <path fill="currentColor" d="M10.75 6a.75.75 0 1 0-1.5 0v3.25H6a.75.75 0 0 0 0 1.5h3.25V14a.75.75 0 1 0 1.5 0v-3.25H14a.75.75 0 1 0 0-1.5h-3.25V6Z" />
+    </svg>
+  ),
+  decrement: (props: SVGProps<SVGSVGElement>): JSX.Element => (
+    <svg viewBox="0 0 20 20" fill="none" {...props}>
+      <path fill="currentColor" fillRule="evenodd" d="M10 18.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Zm0 1.5c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10Z" clipRule="evenodd" />
+      <path fill="currentColor" fillRule="evenodd" d="M5.25 10A.75.75 0 0 1 6 9.25h8a.75.75 0 1 1 0 1.5H6a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+    </svg>
+  ),
 };

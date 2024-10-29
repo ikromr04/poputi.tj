@@ -68,7 +68,7 @@ export default function Navigation(): JSX.Element {
       <div ref={ref} className="relative flex">
         <button
           className={classNames(
-            'relative lg:p-2 text-blue-600 hover:text-blue-800 transition-colors duration-300',
+            'relative lg:p-2 lg:-mr-2 text-blue-600 hover:text-blue-800 transition-colors duration-300',
             (pathname.startsWith(AppRoute.Auth.Index) || isOpen) && 'text-blue-800',
           )}
           type="button"
