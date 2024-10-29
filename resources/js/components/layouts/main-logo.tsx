@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AppRoute } from '../../const';
+import classNames from 'classnames';
 
-export default function Logo(): JSX.Element {
+export default function MainLogo({
+  className,
+}: {
+  className?: string;
+}): JSX.Element {
   const { pathname } = useLocation();
 
   if (pathname === AppRoute.Index) {
     return (
-      <div className="max-w-max max-h-max">
+      <div className={classNames('max-w-max max-h-max p-2', className)}>
         <picture>
           <source media="(min-width: 1024px)" srcSet="/images/logo-full.svg" width={64} height={25} />
           <source srcSet="/images/logo.svg" width={32} height={23} />
@@ -18,7 +23,7 @@ export default function Logo(): JSX.Element {
   }
 
   return (
-    <Link className="max-w-max max-h-max" to="/">
+    <Link className={classNames('max-w-max max-h-max p-2', className)} to="/">
       <picture>
         <source media="(min-width: 1024px)" srcSet="/images/logo-full.svg" width={64} height={25} />
         <source srcSet="/images/logo.svg" width={32} height={23} />

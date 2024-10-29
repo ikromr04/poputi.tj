@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Footer(): JSX.Element {
+export default function PageFooter(): JSX.Element {
   return (
     <footer>
       Footer

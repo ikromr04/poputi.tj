@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import Header from './header';
-import Footer from './footer';
+import PageHeader from './page-header';
+import PageFooter from './page-footer';
 
 export default function PageLayout({
   children,
@@ -9,9 +9,9 @@ export default function PageLayout({
 }): JSX.Element {
   return (
     <>
-      <Header />
+      <PageHeader />
       {children}
-      <Footer />
+      <PageFooter />
     </>
   );
 }
