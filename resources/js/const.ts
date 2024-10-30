@@ -17,4 +17,5 @@ export const AppRoute = {
   Publish: {
     Trip: '/publish/trip'
   },
+  About: '/about',
 };
