@@ -4,7 +4,6 @@
 
 html {
   font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
   font-style: normal;
 }
 
@@ -14,4 +13,12 @@ html {
 
 .container {
   @apply w-[90vw] max-w-7xl mx-auto;
+}
+
+.title {
+  @apply text-3xl font-bold;
+}
+
+.button {
+  @apply flex items-center justify-center min-h-12 rounded-full bg-blue-500 text-white max-w-max font-bold px-6 transition-all duration-300 shadow-md hover:shadow-none hover:bg-blue-600;
 }

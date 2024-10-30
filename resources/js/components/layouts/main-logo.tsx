@@ -16,7 +16,7 @@ export default function MainLogo({
         <picture>
           <source media="(min-width: 1024px)" srcSet="/images/logo-full.svg" width={64} height={25} />
           <source srcSet="/images/logo.svg" width={32} height={23} />
-          <img className="w-10 h-auto lg:h-10 lg:w-auto" alt="Логотип Poputi TJ" />
+          <img className="w-10 h-auto lg:h-10 lg:w-auto" src="/images/logo.svg" alt="Логотип Poputi TJ" />
         </picture>
       </div>
     );
@@ -27,7 +27,7 @@ export default function MainLogo({
       <picture>
         <source media="(min-width: 1024px)" srcSet="/images/logo-full.svg" width={64} height={25} />
         <source srcSet="/images/logo.svg" width={32} height={23} />
-        <img className="w-10 h-auto lg:h-10 lg:w-auto" alt="На главную страницу" />
+        <img className="w-10 h-auto lg:h-10 lg:w-auto" src="/images/logo.svg" alt="На главную страницу" />
       </picture>
     </Link>
   );

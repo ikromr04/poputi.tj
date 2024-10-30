@@ -18,4 +18,5 @@ export const AppRoute = {
     Trip: '/publish/trip'
   },
   About: '/about',
+  Scam: '/scam',
 };

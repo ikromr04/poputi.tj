@@ -1,4 +1,3 @@
-import 'react-datepicker/dist/react-datepicker.css';
 
 import classNames from 'classnames';
 import { Field, Form, Formik } from 'formik';
@@ -10,6 +9,7 @@ import { ru } from 'date-fns/locale';
 import DatePicker from 'react-datepicker';
 import dayjs from 'dayjs';
 import * as Yup from 'yup';
+import 'react-datepicker/dist/react-datepicker.css';
 
 type FormValues = {
   from: string;
@@ -53,8 +53,7 @@ export default function MainSearch({
         >
           <div className="py-2 px-3 text-blue-900 md:grid md:grid-cols-2 lg:grid-cols-4 lg:p-1 lg:grow">
             <div>
-              <label>
-                <span className="sr-only">Откуда</span>
+              <div>
                 <Select
                   styles={{ control: () => ({}) }}
                   classNames={{
@@ -75,12 +74,11 @@ export default function MainSearch({
                   placeholder="Откуда"
                   noOptionsMessage={() => null}
                 />
-              </label>
+              </div>
               <hr className="mx-3 my-1 lg:hidden" />
             </div>
             <div>
-              <label>
-                <span className="sr-only">Куда</span>
+              <div>
                 <Select
                   styles={{ control: () => ({}) }}
                   classNames={{
@@ -101,38 +99,34 @@ export default function MainSearch({
                   placeholder="Куда"
                   noOptionsMessage={() => null}
                 />
-              </label>
+              </div>
               <hr className="mx-3 my-1 lg:hidden" />
             </div>
             <div>
-              <label className="relative flex items-center">
-                <span className="sr-only">Дата поездки</span>
-                <>
-                  <Icons.calendar className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400" width={20} height={20} />
-                  <DatePicker
-                    selected={startDate}
-                    locale={ru}
-                    onChange={(date) => date && setStartDate(date)}
-                    dateFormat="E, d MMM"
-                    placeholderText="Выберите дату"
-                    wrapperClassName="flex grow font-semibold"
-                    className={classNames(
-                      'flex w-full pl-10 focus:outline-none min-h-14 rounded-xl focus:bg-gray-200',
-                      (isToday(startDate) || isTomorrow(startDate)) && 'text-transparent',
-                    )}
-                    popperClassName="fixed top-0 left-0"
-                  />
-                  <span className="absolute top-1/2 left-10 transform -translate-y-1/2 font-semibold">
-                    {isToday(startDate) && 'Сегодня'}
-                    {isTomorrow(startDate) && 'Завтра'}
-                  </span>
-                </>
-              </label>
+              <div className="relative flex items-center">
+                <Icons.calendar className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400" width={20} height={20} />
+                <DatePicker
+                  selected={startDate}
+                  locale={ru}
+                  onChange={(date) => date && setStartDate(date)}
+                  dateFormat="E, d MMM"
+                  placeholderText="Выберите дату"
+                  wrapperClassName="flex grow font-semibold"
+                  className={classNames(
+                    'flex w-full pl-10 focus:outline-none min-h-14 rounded-xl focus:bg-gray-200',
+                    (isToday(startDate) || isTomorrow(startDate)) && 'text-transparent',
+                  )}
+                  popperClassName="fixed top-0 left-0"
+                />
+                <span className="absolute top-1/2 left-10 transform -translate-y-1/2 font-semibold">
+                  {isToday(startDate) && 'Сегодня'}
+                  {isTomorrow(startDate) && 'Завтра'}
+                </span>
+              </div>
               <hr className="mx-3 my-1 md:hidden" />
             </div>
             <div>
-              <label className="relative flex items-center">
-                <span className="sr-only">Пассажиры</span>
+              <div className="relative flex items-center">
                 <Icons.passenger className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400" width={20} height={21} />
                 <Field
                   className="flex w-full pl-10 focus:outline-none min-h-14 rounded-xl focus:bg-gray-200 font-semibold text-blue-900"
@@ -163,7 +157,7 @@ export default function MainSearch({
                     <Icons.increment width={20} height={20} />
                   </button>
                 </span>
-              </label>
+              </div>
             </div>
           </div>
           <button
