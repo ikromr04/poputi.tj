@@ -1,7 +1,6 @@
-
 import classNames from 'classnames';
 import { Field, Form, Formik } from 'formik';
-import React, { useState } from 'react';
+import React, { BaseSyntheticEvent, useCallback, useState } from 'react';
 import Select, { components } from 'react-select';
 import { Icons } from '../icons';
 import { isToday, isTomorrow } from 'date-fns';
@@ -10,33 +9,56 @@ import DatePicker from 'react-datepicker';
 import dayjs from 'dayjs';
 import * as Yup from 'yup';
 import 'react-datepicker/dist/react-datepicker.css';
+import { PlaceId } from '../../types';
+// import axios from 'axios';
 
 type FormValues = {
-  from: string;
-  to: string;
+  from: PlaceId | null;
+  to: PlaceId | null;
   date: Date;
   passengers: number;
 };
 
-export default function MainSearch({
+export default function SearchTrip({
   className,
 }: {
   className?: string;
 }): JSX.Element {
   const
     initialValues: FormValues = {
-      from: '',
-      to: '',
+      from: null,
+      to: null,
       date: dayjs().toDate(),
       passengers: 1,
     },
     validationSchema = Yup.object().shape({
-      from: Yup.string().required('from is required'),
-      to: Yup.string().required('to is required'),
-      date: Yup.string().required('date is required'),
-      passengersQuantity: Yup.string().required('passengersQuantity is required'),
+      from: Yup.string().required('Обязательное поле'),
+      to: Yup.string().required('Обязательное поле'),
+      date: Yup.date().required('Обязательное поле').typeError('Неправильный формат даты'),
+      passengers: Yup.number().required('Обязательное поле'),
     }),
     [startDate, setStartDate] = useState<Date>(dayjs().toDate());
+
+  // const fetchPlaces = useCallback(async (inputValue: string) => {
+  //   if (!inputValue) return;
+
+  //   const response = await axios.get(
+  //     'https://maps.googleapis.com/maps/api/place/autocomplete/json',
+  //     {
+  //       params: {
+  //         input: inputValue,
+  //         key: 'AIzaSyCvg51idayeOgYOAP6IwKoyZdPinKqT2Ac',
+  //       },
+  //     }
+  //   );
+
+  //   const places = response.data.predictions.map((prediction: any) => ({
+  //     value: prediction.place_id,
+  //     label: prediction.description,
+  //   }));
+
+  //   console.log(places);
+  // }, []);
 
   return (
     <Formik
@@ -52,31 +74,26 @@ export default function MainSearch({
           )}
         >
           <div className="py-2 px-3 text-blue-900 md:grid md:grid-cols-2 lg:grid-cols-4 lg:p-1 lg:grow">
-            <div>
-              <div>
-                <Select
-                  styles={{ control: () => ({}) }}
-                  classNames={{
-                    container: () => 'font-semibold',
-                    control: ({ isFocused }) => classNames('relative rounded-xl flex items-center py-2 px-3 min-h-14', isFocused && 'bg-gray-200'),
-                    input: () => '!text-blue-900'
-                  }}
-                  components={{
-                    DropdownIndicator: () => null,
-                    IndicatorSeparator: () => null,
-                    Control: (props) => (
-                      <components.Control {...props}>
-                        <Icons.circle className="text-gray-400" width={20} height={20} />
-                        {props.children}
-                      </components.Control>
-                    )
-                  }}
-                  placeholder="Откуда"
-                  noOptionsMessage={() => null}
-                />
-              </div>
-              <hr className="mx-3 my-1 lg:hidden" />
-            </div>
+            <Select
+              styles={{ control: () => ({}) }}
+              classNames={{
+                container: () => 'font-semibold',
+                control: ({ isFocused }) => classNames('relative rounded-xl flex items-center py-2 px-3 min-h-14', isFocused && 'bg-gray-200'),
+                input: () => '!text-blue-900'
+              }}
+              components={{
+                DropdownIndicator: () => null,
+                IndicatorSeparator: () => null,
+                Control: (props) => (
+                  <components.Control {...props}>
+                    <Icons.circle className="text-gray-400" width={20} height={20} />
+                    {props.children}
+                  </components.Control>
+                )
+              }}
+              placeholder="Откуда"
+              noOptionsMessage={() => null}
+            />
             <div>
               <div>
                 <Select

@@ -36,8 +36,8 @@ export const Icons = {
     </svg>
   ),
   passenger: (props: SVGProps<SVGSVGElement>): JSX.Element => (
-    <svg viewBox="0 0 18 19" width="18" height="19" fill="none" {...props}>
-      <path fill="currentColor" fill-rule="evenodd" d="M1.5 16.5v.5h15v-.5c0-.597-.354-1.421-1.545-2.166C13.76 13.589 11.81 13 9 13s-4.76.588-5.955 1.334C1.854 15.08 1.5 15.905 1.5 16.5Zm-1.5 0v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1c0-2.5-3-5-9-5s-9 2.5-9 5ZM9 10a4.5 4.5 0 0 0 4.5-4.5v-1a4.5 4.5 0 1 0-9 0v1A4.5 4.5 0 0 0 9 10Zm3-4.5v-1a3 3 0 0 0-6 0v1a3 3 0 1 0 6 0Z" clip-rule="evenodd" />
+    <svg viewBox="0 0 18 19" width={18} height={19} fill="none" {...props}>
+      <path fill="currentColor" fillRule="evenodd" d="M1.5 16.5v.5h15v-.5c0-.597-.354-1.421-1.545-2.166C13.76 13.589 11.81 13 9 13s-4.76.588-5.955 1.334C1.854 15.08 1.5 15.905 1.5 16.5Zm-1.5 0v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1c0-2.5-3-5-9-5s-9 2.5-9 5ZM9 10a4.5 4.5 0 0 0 4.5-4.5v-1a4.5 4.5 0 1 0-9 0v1A4.5 4.5 0 0 0 9 10Zm3-4.5v-1a3 3 0 0 0-6 0v1a3 3 0 1 0 6 0Z" clipRule="evenodd" />
     </svg>
   ),
   increment: (props: SVGProps<SVGSVGElement>): JSX.Element => (
