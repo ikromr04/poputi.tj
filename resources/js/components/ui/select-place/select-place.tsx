@@ -71,7 +71,7 @@ export default function SelectPlace({
     };
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative flex w-full">
       <input
         ref={inputRef}
         className="flex items-center h-14 rounded-xl w-full focus:outline-none focus:bg-gray-200 font-semibold pl-10 pr-4 transition-colors duration-300 hover:bg-gray-200"

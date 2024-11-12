@@ -16,11 +16,11 @@ export default function FormikDatepicker({
     [{ value }] = useField(name);
 
   return (
-    <div className="relative flex items-center">
-      <Icons.calendar className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400" width={20} height={20} />
+    <div className="relative flex items-center w-full">
+      <Icons.calendar className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400 pointer-events-none" width={20} height={20} />
       <DatePicker
         className={classNames(
-          'flex w-full pl-10 focus:outline-none min-h-14 rounded-xl focus:bg-gray-200',
+          'flex w-full pl-10 focus:outline-none min-h-14 rounded-xl focus:bg-gray-200 transition-all duration-300 hover:bg-gray-200 cursor-pointer',
           (isToday(value) || isTomorrow(value)) && 'text-transparent',
         )}
         selected={value}
@@ -31,7 +31,7 @@ export default function FormikDatepicker({
         wrapperClassName="flex grow font-semibold"
         popperClassName="fixed top-0 left-0"
       />
-      <span className="absolute top-1/2 left-10 transform -translate-y-1/2 font-semibold">
+      <span className="absolute top-1/2 left-10 transform -translate-y-1/2 font-semibold pointer-events-none">
         {isToday(value) && 'Сегодня'}
         {isTomorrow(value) && 'Завтра'}
       </span>

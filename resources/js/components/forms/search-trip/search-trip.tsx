@@ -66,11 +66,12 @@ export default function SearchTrip({
       actions: FormikHelpers<FormValues>,
     ) => {
       actions.setSubmitting(true);
-      const errors = await actions.validateForm(validationSchema);
-      console.log(errors);
-
-      // const errors = await actions.;
-      // console.log('errors', errors);
+      console.log({
+        from: values.from.selectedOption.value,
+        to: values.to.selectedOption.value,
+        date: dayjs(values.date).toISOString(),
+        passengers: values.passengers,
+      });
     };
 
   return (
@@ -81,17 +82,15 @@ export default function SearchTrip({
     >
       {({ isSubmitting }) => (
         <Form className={classNames('shadow-md bg-white rounded-2xl lg:flex', className)}>
-          <div className="py-2 px-3 text-blue-900 md:grid md:grid-cols-2 lg:grid-cols-4 lg:p-1 lg:grow">
+          <div className="py-2 px-3 text-blue-900 md:grid md:gap-x-1 lg:gap-x-0 md:grid-cols-2 lg:grid-cols-4 lg:p-1 lg:grow">
             <div className="after:flex after:mx-3 after:my-1 after:border-b lg:flex lg:after:my-3 lg:after:mx-1 lg:after:border-r lg:after:border-b-0">
               <FormikSelectPlace name="from" placeholder="Откуда" />
             </div>
-            <div>
+            <div className="after:flex after:mx-3 after:my-1 after:border-b lg:flex lg:after:my-3 lg:after:mx-1 lg:after:border-r lg:after:border-b-0">
               <FormikSelectPlace name="to" placeholder="Куда" />
-              <hr className="mx-3 my-1 lg:hidden" />
             </div>
-            <div className="relative z-0">
+            <div className="after:flex md:after:hidden lg:after:flex after:mx-3 after:my-1 after:border-b lg:flex lg:after:my-3 lg:after:mx-1 lg:after:border-r lg:after:border-b-0 relative z-0">
               <FormikDatepicker name="date" />
-              <hr className="mx-3 my-1 md:hidden" />
             </div>
             <PassengersField />
           </div>
