@@ -20,3 +20,19 @@ export const AppRoute = {
   About: '/about',
   Scam: '/scam',
 };
+
+export const APIRoute = {
+  Places: {
+    Index: '/places',
+  }
+};
+
+export enum SliceName {
+  Auth = 'Auth',
+}
+
+export enum AuthorizationStatus {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN',
+}

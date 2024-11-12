@@ -1,17 +1,24 @@
-import classNames from 'classnames';
-import { Form, Formik } from 'formik';
+import 'react-datepicker/dist/react-datepicker.css';
+
 import React from 'react';
+import classNames from 'classnames';
+import { Form, Formik, FormikHelpers } from 'formik';
 import dayjs from 'dayjs';
 import * as Yup from 'yup';
-import 'react-datepicker/dist/react-datepicker.css';
-import { PlaceId } from '../../../types';
-import FormikSelectPlace from '../../ui/formik-select-place';
+import FormikSelectPlace from '../../ui/select-place/select-place';
 import FormikDatepicker from '../../ui/formik-datepicker';
 import PassengersField from './passengers-field';
+import { Option, Options } from '../../../types';
 
 type FormValues = {
-  from: PlaceId | null;
-  to: PlaceId | null;
+  from: {
+    options: Options;
+    selectedOption: Option;
+  };
+  to: {
+    options: Options;
+    selectedOption: Option;
+  };
   date: Date;
   passengers: number;
 };
@@ -23,8 +30,14 @@ export default function SearchTrip({
 }): JSX.Element {
   const
     initialValues: FormValues = {
-      from: null,
-      to: null,
+      from: {
+        options: [],
+        selectedOption: { value: '', label: '' },
+      },
+      to: {
+        options: [],
+        selectedOption: { value: '', label: '' },
+      },
       date: dayjs().toDate(),
       passengers: 1,
     },
@@ -40,26 +53,32 @@ export default function SearchTrip({
         .required('Обязательное поле')
         .min(1, 'Количество пассажиров не может быть ниже 1')
         .min(1, 'Количество пассажиров не может превышать 8'),
-    });
+    }),
+
+    onSubmit = (
+      values: FormValues,
+      actions: FormikHelpers<FormValues>
+    ) => {
+      console.log(values);
+    };
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(_, { setSubmitting }) => setSubmitting(true)}
+      onSubmit={onSubmit}
     >
       {({ isSubmitting }) => (
         <Form className={classNames('shadow-md bg-white rounded-2xl lg:flex', className,)}>
           <div className="py-2 px-3 text-blue-900 md:grid md:grid-cols-2 lg:grid-cols-4 lg:p-1 lg:grow">
-            <div>
+            <div className="after:flex after:mx-3 after:my-1 after:border-b lg:flex lg:after:my-3 lg:after:mx-1 lg:after:border-r lg:after:border-b-0">
               <FormikSelectPlace name="from" placeholder="Откуда" />
-              <hr className="mx-3 my-1 lg:hidden" />
             </div>
             <div>
               <FormikSelectPlace name="to" placeholder="Куда" />
               <hr className="mx-3 my-1 lg:hidden" />
             </div>
-            <div>
+            <div className="relative z-0">
               <FormikDatepicker name="date" />
               <hr className="mx-3 my-1 md:hidden" />
             </div>

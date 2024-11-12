@@ -11,7 +11,7 @@ export default function PassengersField(): JSX.Element {
     MAX_PASSENGERS = 8;
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex items-center z-0">
       <Icons.passenger className="absolute top-1/2 left-3 z-10 transform -translate-y-1/2 text-gray-400" width={20} height={21} />
       <input
         className="flex w-full pl-10 focus:outline-none min-h-14 rounded-xl focus:bg-gray-200 font-semibold text-blue-900"
