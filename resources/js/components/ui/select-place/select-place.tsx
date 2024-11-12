@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { BaseSyntheticEvent, InputHTMLAttributes, useRef, useState } from 'react';
 import { Option } from '../../../types';
 import { debounce } from '../../../utils';
@@ -23,7 +24,7 @@ export default function SelectPlace({
     [isLoading, setIsLoading] = useState<boolean>(false),
     [isOpen, setIsOpen] = useState<boolean>(false),
     [isNotFound, setIsNotfound] = useState<boolean>(false),
-    [{ value: { options, selectedOption } }, , helpers] = useField(name),
+    [{ value: { options, selectedOption } }, meta, helpers] = useField(name),
     containerRef = useOutsideClick<HTMLDivElement>(() => setIsOpen(false)),
 
     handleInputChange = async (evt: BaseSyntheticEvent) => {
@@ -82,6 +83,9 @@ export default function SelectPlace({
         defaultValue={selectedOption.label}
         {...props}
       />
+
+      {(meta.error as any)?.selectedOption?.value && meta.touched &&
+        <p className="text-xs text-red-600 absolute right-2 bottom-1">{(meta.error as any)?.selectedOption?.value}</p>}
 
       <Status isLoading={isLoading} />
       <NotFoundMessage isNotFound={isNotFound} />

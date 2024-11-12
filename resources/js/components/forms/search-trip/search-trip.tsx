@@ -42,10 +42,16 @@ export default function SearchTrip({
       passengers: 1,
     },
     validationSchema = Yup.object().shape({
-      from: Yup.string()
-        .required('Обязательное поле'),
-      to: Yup.string()
-        .required('Обязательное поле'),
+      from: Yup.object({
+        selectedOption: Yup.object({
+          value: Yup.string().required('Укажите место'),
+        }).required(),
+      }).required(),
+      to: Yup.object({
+        selectedOption: Yup.object({
+          value: Yup.string().required('Укажите место'),
+        }).required(),
+      }).required(),
       date: Yup.date()
         .required('Обязательное поле')
         .typeError('Неправильный формат даты'),
@@ -55,11 +61,16 @@ export default function SearchTrip({
         .min(1, 'Количество пассажиров не может превышать 8'),
     }),
 
-    onSubmit = (
+    onSubmit = async (
       values: FormValues,
-      actions: FormikHelpers<FormValues>
+      actions: FormikHelpers<FormValues>,
     ) => {
-      console.log(values);
+      actions.setSubmitting(true);
+      const errors = await actions.validateForm(validationSchema);
+      console.log(errors);
+
+      // const errors = await actions.;
+      // console.log('errors', errors);
     };
 
   return (
@@ -69,7 +80,7 @@ export default function SearchTrip({
       onSubmit={onSubmit}
     >
       {({ isSubmitting }) => (
-        <Form className={classNames('shadow-md bg-white rounded-2xl lg:flex', className,)}>
+        <Form className={classNames('shadow-md bg-white rounded-2xl lg:flex', className)}>
           <div className="py-2 px-3 text-blue-900 md:grid md:grid-cols-2 lg:grid-cols-4 lg:p-1 lg:grow">
             <div className="after:flex after:mx-3 after:my-1 after:border-b lg:flex lg:after:my-3 lg:after:mx-1 lg:after:border-r lg:after:border-b-0">
               <FormikSelectPlace name="from" placeholder="Откуда" />
