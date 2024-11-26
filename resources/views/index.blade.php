@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="font-sourceSans" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
   <meta charset="UTF-8">
@@ -11,16 +11,15 @@
   <link rel="icon" href="{{ asset('favicons/icon.svg') }}" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ asset('favicons/180x180.png') }}">
   <link rel="manifest" href="{{ asset('manifest.webmanifest') }}">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
   <title>Поездки на ваш выбор по самым низким ценам | {{ env('APP_NAME') }}</title>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div class="flex flex-col min-w-full min-h-screen bg-blue-50 overflow-x-hidden" id="root"></div>
 
   @viteReactRefresh
   @vite('resources/js/main.tsx')

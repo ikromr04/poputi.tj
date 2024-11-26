@@ -95,7 +95,7 @@ export default function SearchTrip({
             <PassengersField />
           </div>
           <button
-            className="flex items-center justify-center px-4 rounded-b-xl lg:rounded-l-none lg:rounded-r-xl lg:max-w-[11%] xl:max-w-[15%] min-h-14 bg-blue-500 text-center text-white w-full font-semibold"
+            className="flex items-center justify-center px-4 rounded-b-xl lg:rounded-l-none lg:rounded-r-xl lg:max-w-[11%] xl:max-w-[15%] min-h-14 bg-primary text-center text-white w-full font-semibold"
             type="submit"
             disabled={isSubmitting}
           >

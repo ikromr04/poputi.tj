@@ -10,7 +10,7 @@ export default function MainLogo({
 }): JSX.Element {
   const { pathname } = useLocation();
 
-  if (pathname === AppRoute.Index) {
+  if (pathname === AppRoute.Home) {
     return (
       <div className={classNames('max-w-max max-h-max p-2', className)}>
         <picture>

@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import SearchTrip from '../forms/search-trip/search-trip';
 
-export default function MainPage(): JSX.Element {
+export default function HomePage(): JSX.Element {
   return (
     <PageLayout>
       <main>
         <div className="bg-blue-400 pb-36 -mb-36 md:pb-28 md:-mb-28 lg:pb-8 lg:-mb-8 lg:min-h-[272px] bg-vitrin-gradient lg:bg-vitrin-image bg-center bg-cover">
-          <h1 className="container text-2xl md:text-3xl lg:text-5xl font-bold text-center text-white py-6">Поездки на ваш выбор по самым низким ценам</h1>
+          <h1 className="container text-2xl md:text-3xl lg:text-5xl font-bold text-center text-white py-6">
+            Поездки на ваш выбор по самым низким ценам
+          </h1>
         </div>
         <SearchTrip className="container mb-10 lg:mb-16" />
 
@@ -22,7 +24,7 @@ export default function MainPage(): JSX.Element {
               <span className="flex items-center justify-center w-10 h-10 text-gray-500 mb-3">
                 <Icons.coins width={30} height={30} />
               </span>
-              <h3 className="text-brand-dark font-bold mb-1">Ваша поездка по низкой цене</h3>
+              <h3 className="text-primary-dark font-bold mb-1">Ваша поездка по низкой цене</h3>
               <p>
                 Куда бы вы ни собирались, с попутчиками вы сможете найти свою идеальную поездку среди множества маршрутов и доехать по самой низкой цене.
               </p>
@@ -31,7 +33,7 @@ export default function MainPage(): JSX.Element {
               <span className="flex items-center justify-center w-10 h-10 text-gray-500 mb-3">
                 <Icons.userCard width={33} height={27} />
               </span>
-              <h3 className="text-brand-dark font-bold mb-1">Доверяйте своим попутчикам</h3>
+              <h3 className="text-primary-dark font-bold mb-1">Доверяйте своим попутчикам</h3>
               <p>
                 Мы стараемся узнать ваших будущих попутчиков как можно лучше. Мы проверяем отзывы, профили и паспортные данные попутчиков, чтобы вы знали, с кем поедете.
               </p>
@@ -40,7 +42,7 @@ export default function MainPage(): JSX.Element {
               <span className="flex items-center justify-center w-10 h-10 text-gray-500 mb-3">
                 <Icons.lightning width={23} height={33} />
               </span>
-              <h3 className="text-brand-dark font-bold mb-1">В дорогу за пару кликов!</h3>
+              <h3 className="text-primary-dark font-bold mb-1">В дорогу за пару кликов!</h3>
               <p>
                 Забронировать поездку проще простого. В нашем приложении легко разобраться: мощный алгоритм за пару минут найдет водителя поблизости, и вам останется нажать пару кнопок для брони.
               </p>
@@ -48,7 +50,7 @@ export default function MainPage(): JSX.Element {
           </ul>
         </section>
 
-        <section className="bg-brand-dark text-white text-center pt-10 pb-14 lg:text-left lg:py-14">
+        <section className="bg-primary-dark text-white text-center pt-10 pb-14 lg:text-left lg:py-14">
           <h2 className="sr-only">Важное</h2>
 
           <div className="container lg:grid lg:grid-cols-2 lg:items-center">
@@ -74,7 +76,7 @@ export default function MainPage(): JSX.Element {
             <img src="/images/driver.svg" width={331} height={197} alt="Водитель с попутчиками ездят в машине. Вид с салона." />
           </div>
           <div className="flex flex-col items-center">
-            <strong className="title text-brand-dark flex mb-6 w-full">Экономьте, когда вы за рулем</strong>
+            <strong className="title text-primary-dark flex mb-6 w-full">Экономьте, когда вы за рулем</strong>
             <p className="text-gray-500 font-semibold mb-6">
               Зарегистрируйте профиль водителя, берите попутчиков и экономьте на бензине. Чтобы опубликовать первую поездку, нужно всего пару минут. Готовы ехать?
             </p>

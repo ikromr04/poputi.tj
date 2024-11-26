@@ -1,9 +1,13 @@
 export const AppRoute = {
-  Index: '/',
+  Home: '/',
   Auth: {
     Index: '/auth',
     Login: '/auth/login',
     Register: '/auth/register',
+    ForgotPassword: '/auth/forgot-password',
+    ResetPassword: '/auth/reset-password/:token',
+    Profile: '/auth/profile',
+    Trips: '/auth/trips',
   },
   Trips: {
     Index: '/trip',
@@ -24,7 +28,13 @@ export const AppRoute = {
 export const APIRoute = {
   Places: {
     Index: '/places',
-  }
+  },
+  Auth: {
+    Login: '/auth/login',
+    ForgotPassword: '/auth/forgot-password',
+    ResetPassword: '/auth/reset-password',
+    Register: '/auth/register',
+  },
 };
 
 export enum SliceName {

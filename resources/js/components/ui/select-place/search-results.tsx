@@ -28,7 +28,7 @@ export default function SearchResults({
             type="button"
             onClick={handleOptionSelect(item)}
           >
-            <span className="text-brand-dark flex mb-1">{item.label.split(',', 2)[0]}</span>
+            <span className="text-primary-dark flex mb-1">{item.label.split(',', 2)[0]}</span>
             <span className="text-gray-500 font-semibold">{item.label.split(',', 2)[1]}</span>
           </button>
         </li>
