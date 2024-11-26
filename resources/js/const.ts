@@ -10,7 +10,7 @@ export const AppRoute = {
     Trips: '/auth/trips',
   },
   Trips: {
-    Index: '/trip',
+    Index: '/trips',
   },
   Help: {
     Index: '/help',
